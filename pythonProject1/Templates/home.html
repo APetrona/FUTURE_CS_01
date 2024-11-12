@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .welcome-message {
+            font-size: 1.5rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .action-btn {
+            padding: 12px 2px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .action-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Tile Layout Styling */
+        .tiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .tile {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .tile h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .tile p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .tile .action-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Breadcrumbs Styling */
+        .breadcrumbs {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            text-align: left;
+            color: #333;
+        }
+        .breadcrumbs a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .breadcrumbs span {
+            color: #666;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .tiles-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .tiles-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a> &gt;
+            <span>IT Dashboard</span>
+        </div>
+
+        <h1>Welcome to Your IT Dashboard!</h1>
+        <p class="welcome-message">You have successfully logged in and completed 2FA verification.</p>
+
+        <div class="tiles-container">
+            <div class="tile">
+                <h3>System Health Overview</h3>
+                <p>Monitor the health of your IT infrastructure, including servers, networks, and devices.</p>
+                <a href="#" class="action-btn">View System Health</a>
+            </div>
+
+            <div class="tile">
+                <h3>Security Audit</h3>
+                <p>Review recent security incidents, patch updates, and vulnerabilities in your network.</p>
+                <a href="#" class="action-btn">Review Security Audit</a>
+            </div>
+
+            <div class="tile">
+                <h3>Network Performance</h3>
+                <p>Track the performance of your network, including bandwidth, latency, and uptime.</p>
+                <a href="#" class="action-btn">View Network Stats</a>
+            </div>
+
+            <div class="tile">
+                <h3>Incident Management</h3>
+                <p>Manage ongoing incidents and review past reports on system outages or issues.</p>
+                <a href="#" class="action-btn">Manage Incidents</a>
+            </div>
+
+            <div class="tile">
+                <h3>Backup & Recovery</h3>
+                <p>Ensure your data is backed up regularly and recover from any potential data loss.</p>
+                <a href="#" class="action-btn">Check Backup Status</a>
+            </div>
+
+            <div class="tile">
+                <h3>Software Updates</h3>
+                <p>Ensure all critical software and systems are up to date with the latest patches and updates.</p>
+                <a href="#" class="action-btn">Check for Updates</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
